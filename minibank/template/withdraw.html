@@ -1,0 +1,121 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>bank</title>
+  {% load static %}
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/style.css.map' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container d-block">
+          <div class="main_nav_menu">
+            <div class="fk_width">
+              <div class="custom_menu-btn">
+                <button onclick="openNav()">
+                  <span class="s-1"> </span>
+                  <span class="s-2"> </span>
+                  <span class="s-3"> </span>
+                </button>
+              </div>
+              <div id="myNav" class="overlay">
+                <div class="overlay-content">
+                  <a class="" href="index">Home <span class="sr-only">(current)</span></a>
+                  <a class="" href="profile">profile </a>
+                  <a class="" href="withdraw">withdraw </a>
+                  <a class="" href="deposit">deposit </a>
+                </div>
+              </div>
+            </div>
+            <a class="navbar-brand" href="withdraw">
+              <span>
+                withdraw
+              </span>
+            </a>
+            <div class="user_option">
+              <a href="deposit">
+                Deposit
+              </a>
+              <a href="{% url 'logout' %}">
+                <button  class="btn"  title="logout">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="white" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+                  <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+                </svg>
+              
+              </button>
+            </a>
+            </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+        <div class="container-fluid">
+          <div class="row slider-row">
+            <div class="col-lg-3 offset-lg-1">
+              <div class="container">
+                  <h1>withdraw Money</h1>
+                  <div style="margin: 0 auto; width: 300px;">
+                      <form method="post" action="withdraw" style="border: 1px solid #ccc; padding: 20px;">
+                          {%csrf_token%}
+                          <label for="amount" style="display: block; margin-bottom: 10px;">Amount:</label>
+                          <input type="text" id="amount" name="amount" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                  
+                          <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: #fff; border: none; cursor: pointer;">withdraw</button>
+                      </form>
+                  </div>
+              </div>
+            </div>
+          <div class="col-lg-8 px-0">
+            <div class="img-box">
+              <img src="{% static 'bank.png' %}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <script src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
+  <script src="{% static 'js/bootstrap.js'%}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="{% static 'js/custom.js'%}"></script>
+</body>
+
+</html>
